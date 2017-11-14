@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/comments/{id}', ['as' => 'comments', 'uses' => 'CommentController@showComments']);
+Route::post('/store', 'CommentController@storeComment')->name('store');
