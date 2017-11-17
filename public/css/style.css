@@ -1,0 +1,22 @@
+.new-comments-container {
+    position: fixed;
+    top: 50px;
+    z-index: 10;
+}
+
+.new-comments-link {
+    color: #a94442;
+    cursor: pointer;
+}
+
+.new-comments-link:hover {
+    color: #a94442;
+}
+
+.no-display {
+    display: none;
+}
+
+.block-display {
+    display: block !important;
+}

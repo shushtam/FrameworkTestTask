@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreCommentRequest extends FormRequest
+class GetCommentsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,24 +23,8 @@ class StoreCommentRequest extends FormRequest
      */
     public function rules()
     {
-        if (auth()->check()) {
-            return [
-                //
-                'comment' => 'required|max:255'
-            ];
-        }
         return [
             //
-            'auth' => 'required'
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'comment.required' => 'Please write a comment',
-            'comment.max' => 'Comment is too long',
-            'auth.required' => "You must login to leave a comment."
         ];
     }
 
