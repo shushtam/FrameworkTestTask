@@ -12,7 +12,7 @@
                 <div class="alert alert-danger new-comments-container no-display" ng-show="showMessage"
                      ng-class="showMessage?'block-display':''">
                     There is/are <% newCommentsCount %> new comment(s). Click
-                    <a class="new-comments-link">[here]</a> to view.
+                    <a class="new-comments-link" ng-click="getNewComments()">[here]</a> to view.
                 </div>
                 <div class="panel panel-primary">
                     <div class="panel-heading">Comments</div>

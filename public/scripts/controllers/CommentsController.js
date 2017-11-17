@@ -18,7 +18,6 @@ app.controller("CommentsController", ['$scope', '$http', '$timeout', function ($
 
         });
     });
-
     $scope.postComment = function () {
         $http({
             method: "POST",
@@ -33,6 +32,25 @@ app.controller("CommentsController", ['$scope', '$http', '$timeout', function ($
             }
         }, function error(response) {
             $scope.errors = response.data.errors;
+        });
+    };
+    $scope.getNewComments = function () {
+        $scope.showMessage = false;
+        $scope.newCommentsCount = 0;
+        $scope.lastElement = $scope.comments.length;
+        $http({
+            method: "GET",
+            url: "/get",
+            params: {id: $scope.itemId}
+        }).then(function success(response) {
+            $scope.comments = response.data;
+            $timeout(function () {
+                angular.element('html, body').animate({
+                    scrollTop: $("[data-id='" + $scope.lastElement + "']").offset().top
+                }, 2000);
+            })
+
+        }, function error(response) {
         });
     };
 }]);
