@@ -13,6 +13,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('bower_components/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+    <link href="{{ asset('bower_components/textAngular/dist/textAngular.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
@@ -81,7 +83,12 @@
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+<script src="{{asset('bower_components/jquery/dist/jquery.js')}}"></script>
 <script src="{{asset('bower_components/angular/angular.js')}}"></script>
+<script src="{{asset('bower_components/angular-sanitize/angular-sanitize.js')}}"></script>
+<script src="{{asset('bower_components/textAngular/dist/textAngular-rangy.min.js')}}"></script>
+<script src="{{asset('bower_components/textAngular/dist/textAngular-sanitize.js')}}"></script>
+<script src="{{asset('bower_components/textAngular/dist/textAngular.min.js')}}"></script>
 <script src="{{asset('scripts/app.js')}}"></script>
 <script src="{{asset('scripts/controllers/CommentsController.js')}}"></script>
 </body>

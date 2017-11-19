@@ -45,4 +45,18 @@ class CommentController extends Controller
         return $comments->toJson();
 
     }
+
+    public function typingComment(\App\Http\Requests\TypingCommentRequest $request)
+    {
+        if (Auth::check()) {
+            $data = ['userid' => Auth::id(), 'username' => Auth::user()->name, 'item_id' => $request->item_id, 'typing' => json_decode($request->typing)];
+            $pusher = new Pusher\Pusher(
+                'b97ad9c93b6c1252a940',
+                'f5f2ab83277361ff2ffd',
+                '431398');
+            $pusher->trigger('typing' . $request->item_id, 'typing-comment', $data);
+        }
+        return response()->json(['success' => true]);
+
+    }
 }
